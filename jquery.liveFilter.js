@@ -33,6 +33,11 @@
 			contains.show();
 			containsNot.hide();
 			
+			if (val === '') {
+				contains.show();
+				containsNot.show();
+			}
+			
 			options.after.call(this, contains, containsNot);
 		});
 		
