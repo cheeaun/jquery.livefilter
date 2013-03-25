@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<title>jQuery.liveFilter</title>
+<link rel="stylesheet" href="http://github.com/cheeaun/cacss/raw/master/ca.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<script src="jquery.liveFilter.js"></script>
+<script>
+  $(function(){
+    /*$('#livefilter-list').liveFilter('#livefilter-input', 'li', {
+      filterChildSelector: 'a'
+    });*/
+	$('#demo-container ul').liveFilter('#livefilter-input', 'li', {
+      filterChildSelector: ':hidden',
+	  elementCompareProperty: 'val'
+    });
+  });
+</script>
+<h1>jQuery.liveFilter</h1>
+
+<h2>About</h2>
+<p>A jQuery plugin to filter a list of data or elements. A fork of Mike Merritt's <a href="http://engine.digitalinferno.net/plugins/live-filter.php">jQuery.liveFilter</a> plugin.</p>
+
+<h2>Demo</h2>
+<div id="demo-container">
+  <fieldset>
+    <legend><label for="livefilter-input">Type anything.</label></legend>
+    <input id="livefilter-input" type="text" value="">
+    <ul id="livefilter-list" class="livefilter-list">
+      <li><a href="#">cool</a><input id="blabla" type="hidden" value="cool" /></li>
+      <li><a href="#">nice</a><input type="hidden" value="nice" /></li>
+      <li><a href="#">interesting</a><input type="hidden" value="interesting" /></li>
+      <li><a href="#">javascript</a><input type="hidden" value="javascript" /></li>
+      <li><a href="#">css</a><input type="hidden" value="css" /></li>
+      <li><a href="#">html</a><input type="hidden" value="html" /></li>
+      <li><a href="#">script</a><input type="hidden" value="script" /></li>
+      <li><a href="#">international</a><input type="hidden" value="international" /></li>
+    </ul>
+	
+	<ul id="livefilter-list2" class="livefilter-list">
+      <li><a href="#">fine</a><input type="hidden" value="fine" /></li>
+      <li><a href="#">great</a><input type="hidden" value="great" /></li>
+      <li><a href="#">eye-poping</a><input type="hidden" value="eye-poping" /></li>
+      <li><a href="#">C#</a><input type="hidden" value="C#" /></li>
+      <li><a href="#">ajax</a><input type="hidden" value="ajax" /></li>
+      <li><a href="#">xml</a><input type="hidden" value="xml" /></li>
+      <li><a href="#">mvvm</a><input type="hidden" value="mvvm" /></li>
+      <li><a href="#">national</a><input type="hidden" value="national" /></li>
+    </ul>
+  </fieldset>
+</div>
+
+<h2>Code</h2>
+<h3>HTML:</h3>
+<pre><code>&lt;input id=&quot;livefilter-input&quot; type=&quot;text&quot; value=&quot;&quot;&gt;
+&lt;ul id=&quot;livefilter-list&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;cool&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;nice&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;interesting&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;javascript&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;css&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;html&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;script&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;international&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+<h3>JavaScript:</h3>
+<pre><code>$('#livefilter-list').liveFilter('#livefilter-input', 'li', {
+  filterChildSelector: 'a'
+});</code></pre>
+</dl>
+
+<h2>Documentation</h2>
+<h3>Syntax:</h3>
+<pre><code>$(<var>container element of elements to be filtered</var>).liveFilter(<var>input element</var>, <var>element to be filtered</var>, <var>options</var>);
+</code></pre>
+<h3>Options:</h3>
+<ul>
+  <li>filterChildSelector - (<strong>string</strong>, optional) A string indicating the selector of the elements to be matched and filtered.</li>
+  <li>before - (<strong>function</strong>, optional) Executed before data or elements are filtered.</li>
+  <li>after - (<strong>function</strong>, optional) Executed after data or elements are filtered.</li>
+</ul>
+
+<h2>Download</h2>
+<p>You can download this project in either <a href="http://github.com/cheeaun/jquery.livefilter/zipball/master">zip</a> or <a href="http://github.com/cheeaun/jquery.livefilter/tarball/master">tar</a> formats. You can also clone the project with <a href="http://git-scm.com/">Git</a> by running:</p>
+<pre><code>git clone git://github.com/cheeaun/jquery.livefilter.git</code></pre>
+
+<h2>Source Code</h2>
+<a href="http://github.com/cheeaun/jquery.livefilter">http://github.com/cheeaun/jquery.livefilter</a>
