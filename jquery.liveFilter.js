@@ -12,7 +12,8 @@
 		var defaults = {
 			filterChildSelector: null,
 			before: function(){},
-			after: function(){}
+			after: function () { },
+		    elementCompareProperty : 'text'
 		};
 		var options = $.extend(defaults, options);
 		
@@ -43,7 +44,7 @@
 		
 		$.extend($.expr[':'], {
 			inContains: function(a,i,m){
-				return $(a).text().toUpperCase().indexOf(m[3].toUpperCase()) >= 0;
+			    return $(a)[options.elementCompareProperty]().toUpperCase().indexOf(m[3].toUpperCase()) >= 0;
 			}
 		});
 	}
