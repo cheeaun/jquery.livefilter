@@ -22,10 +22,10 @@ $(<var>selector</var>).liveFilter(<var>input element</var>, <var>element to be f
 
 ### Options
 
-- `filterChildSelector` - (**string**, optional) A string indicating the selector of the elements to be matched and filtered.
-- `filter(function(element, value))` - (**function**, optional) Executed for filtering the elements based on the input field value.
-- `before()` - (**function**, optional) Executed before data or elements are filtered.
-- `after()` - (**function**, optional) Executed after data or elements are filtered.
+- `filterChildSelector` - ( **string**, optional) A string indicating the selector of the elements to be matched and filtered.
+- `filter(function(element, value))` - ( **function**, optional) Executed for filtering the elements based on the input field value.
+- `before()` - ( **function**, optional) Executed before data or elements are filtered.
+- `after()` - ( **function**, optional) Executed after data or elements are filtered.
 
 License
 -------
