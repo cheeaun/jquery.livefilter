@@ -11,6 +11,9 @@
 	$.fn.liveFilter = function(inputEl, filterEl, options){
 		var defaults = {
 			filterChildSelector: null,
+			filter: function(el, val){
+				return $(el).text().toUpperCase().indexOf(val.toUpperCase()) >= 0;
+			},
 			before: function(){},
 			after: function(){}
 		};
@@ -18,11 +21,14 @@
 		
 		var el = $(this).find(filterEl);
 		if (options.filterChildSelector) el = el.find(options.filterChildSelector);
-	 
+
+		var filter = options.filter;
 		$(inputEl).keyup(function(){
 			var val = $(this).val();
-			var contains = el.filter(':inContains("'+val+'")');
-			var containsNot = el.filter(':not(:inContains("'+val+'"))');
+			var contains = el.filter(function(){
+				return filter(this, val);
+			});
+			var containsNot = el.not(contains);
 			if (options.filterChildSelector){
 				contains = contains.parents(filterEl);
 				containsNot = containsNot.parents(filterEl).hide();
@@ -39,12 +45,6 @@
 			}
 			
 			options.after.call(this, contains, containsNot);
-		});
-		
-		$.extend($.expr[':'], {
-			inContains: function(a,i,m){
-				return $(a).text().toUpperCase().indexOf(m[3].toUpperCase()) >= 0;
-			}
 		});
 	}
 })(jQuery);
